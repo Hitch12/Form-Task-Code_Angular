@@ -1,0 +1,241 @@
+<section class="form">
+  <div class="container-fluid container-lg py-4">
+    <h2 class="m-0">Digital Bond</h2>
+    <p>A digital marketing agency that mixes and matches creativity and commitment to help brands go beyond the limit</p>
+
+    <!-- <form [formGroup]="myForm" class="row example-form mt-3 gy-2">
+
+
+      <div class="col-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Your Name" formControlName="name" required>
+          <mat-error *ngIf="myForm.get('name')?.errors">{{getErrorMessageName()}}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Position</mat-label>
+          <input matInput placeholder="Your Position" formControlName="Position" required>
+          <mat-error *ngIf="myForm.get('Position')?.errors">{{getErrorMessagePosition()}}</mat-error>
+
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-12">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="Your-Email@gmail.com" formControlName="email" required>
+          <mat-error *ngIf="myForm.get('email')?.errors">{{getErrorMessageEmail()}}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Availability Date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="AvailabilityDate">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Expected Salary</mat-label>
+          <input matInput type="number" placeholder="0000EG" formControlName="ExpectedSalary"  required>
+          <mat-error *ngIf="myForm.get('ExpectedSalary')?.errors">{{getErrorMessageExpectedSalary()}}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Date Of Birth</mat-label>
+          <input matInput [matDatepicker]="picker2" formControlName="DateOfBirth">
+          <mat-hint>DD/MM/YYYY</mat-hint>
+          <mat-datepicker #picker2 startView="year" [startAt]="startDate"></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Phone number</mat-label>
+          <input matInput type="number" formControlName="PhoneNumber" required>
+          <mat-icon matSuffix>phone</mat-icon>
+          <mat-hint>Include area code</mat-hint>
+          <mat-error *ngIf="myForm.get('PhoneNumber')?.errors">{{getErrorMessagePhoneNumber()}}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-12">
+        <mat-form-field class="example-full-width w-100"  appearance="fill">
+          <mat-label>Address...</mat-label>
+          <textarea matInput placeholder="Enter your Address" formControlName="Address"></textarea>
+          <mat-error *ngIf="myForm.get('Address')?.errors">{{getErrorMessageAddress()}}</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-md-6">
+        <mat-form-field appearance="fill" class="w-100">
+          <mat-label>Marital Status</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let State of Status" [value]="State.value">
+              {{State.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="col-md-6">
+        <div class="DragArea position-relative" *ngIf="!file">
+          <mat-label class="fs-5 position-absolute top-50 start-50 translate-middle text-muted">Drag & Drob (File)</mat-label>
+          <input type="file" (change)="getFile($event)" class="file">
+        </div>
+        <div *ngIf="file">
+          File Name : {{file.name}} <br>
+          <button (click)="file = undefined">Clear File</button>
+        </div><br>
+      </div>
+      <div class="col-12 text-center">
+        <button [disabled]="myForm.invalid" type="submit" mat-raised-button color="warn" class=" py-1 px-5">Submit</button>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </form> -->
+
+    <div class="col-12">
+      <mat-horizontal-stepper >
+
+        <form [formGroup]="myForm" (ngSubmit)="submit(myForm)" class="row example-form mt-3 gy-2">
+
+
+        <mat-step label="personal information" color="warn"  >
+          <div class="row example-form mt-3 gy-2">
+            <div class="col-6">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Your Name" formControlName="name" required>
+                <mat-error *ngIf="myForm.get('name')?.errors">{{getErrorMessageName()}}</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-6">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Date Of Birth</mat-label>
+                <input matInput [matDatepicker]="picker2" formControlName="DateOfBirth">
+                <mat-hint>DD/MM/YYYY</mat-hint>
+                <mat-datepicker #picker2 startView="year" [startAt]="startDate"></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Phone number</mat-label>
+                <input matInput type="number" formControlName="PhoneNumber" required>
+                <mat-icon matSuffix>phone</mat-icon>
+                <mat-hint>Include area code</mat-hint>
+                <mat-error *ngIf="myForm.get('PhoneNumber')?.errors">{{getErrorMessagePhoneNumber()}}</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Marital Status</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let State of Status" [value]="State.value">
+                    {{State.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-12">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="Your-Email@gmail.com" formControlName="email" required>
+                <mat-error *ngIf="myForm.get('email')?.errors">{{getErrorMessageEmail()}}</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-12">
+              <mat-form-field class="example-full-width w-100"  appearance="fill">
+                <mat-label>Address...</mat-label>
+                <textarea matInput placeholder="Enter your Address" formControlName="Address"></textarea>
+                <mat-error *ngIf="myForm.get('Address')?.errors">{{getErrorMessageAddress()}}</mat-error>
+              </mat-form-field>
+            </div>
+
+
+
+          <div>
+            <button mat-button matStepperNext type="button">Next</button>
+          </div>
+        </div>
+        </mat-step>
+        <mat-step label="Job information" color="warn">
+          <div class="row example-form mt-3 gy-2">
+
+            <div class="col-6">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Position</mat-label>
+                <input matInput placeholder="Your Position" formControlName="Position" required>
+                <mat-error *ngIf="myForm.get('Position')?.errors">{{getErrorMessagePosition()}}</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-6">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Availability Date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="AvailabilityDate">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Expected Salary</mat-label>
+                <input matInput type="number" placeholder="0000EG" formControlName="ExpectedSalary"  required>
+                <mat-error *ngIf="myForm.get('ExpectedSalary')?.errors">{{getErrorMessageExpectedSalary()}}</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+              <div class="DragArea position-relative" *ngIf="!file">
+                <p class="fs-5 position-absolute top-50 start-50 translate-middle text-muted">Drag & Drob (File)</p>
+                <input type="file" (change)="getFile($event)" class="file">
+              </div>
+              <div *ngIf="file">
+                File Name : {{file.name}} <br>
+                <button (click)="file = undefined">Clear File</button>
+              </div><br>
+            </div>
+
+
+            <div>
+              <button mat-button matStepperPrevious type="button">Back</button>
+              <button [disabled]="myForm.invalid" (click)="submit(myForm)" type="submit" mat-raised-button color="warn" class=" py-1 ">Submit</button>
+            </div>
+          </div>
+          </mat-step>
+
+
+
+
+        </form>
+        </mat-horizontal-stepper>
+    </div>
+
+  </div>
+</section>
+
+

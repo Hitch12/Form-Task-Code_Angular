@@ -1,0 +1,47 @@
+.heeder-h2 {
+  font-size: 48px;
+  margin-top: 50px;
+}
+.heeder-b-b::after {
+  content: "";
+  width: 20%;
+  position: absolute;
+  height: 3px;
+  background-color: var(--bs-red);
+  bottom: -20;
+  transform: translateX(-50%);
+}
+.icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  padding: 30;
+  border: solid 7px var(--bs-red);
+  border-radius: 50%;
+  transition: 0.5s ease;
+  margin: 5px 0px;
+}
+.card:hover .icon {
+  background-color: var(--bs-red);
+  border: solid #e0e0e0e7 10px;
+  color: #fff;
+}
+.card {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.border-10 {
+  border: solid white 10px !important;
+}
+
+.owrTeem{
+  background: var(--bs-red);
+}
+.carousel-item {
+  color: #fff;
+}

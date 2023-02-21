@@ -1,0 +1,14 @@
+.DragArea
+{
+  width: 100%;
+  height: 3.5rem;
+  border: solid 3px var(--bs-red);
+  .file{
+    opacity: 0;
+    padding: 3.5rem;
+    width: 100%;
+    height: 3.5rem;
+
+  }
+  overflow: hidden;
+}

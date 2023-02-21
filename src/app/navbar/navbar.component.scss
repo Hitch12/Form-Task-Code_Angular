@@ -1,0 +1,21 @@
+.nav-link,
+.active {
+  color: #fff !important;
+  transition: 0.2s;
+}
+
+.layar-nav{
+    position: absolute;
+    width: 50%;
+    height: 1.5;
+    background-color: #000;
+    bottom: 5;
+    left: 15;
+    transition: 0.3s ease-in-out width;
+}
+.nav-item:hover .layar-nav{
+    width: 50%;
+}
+.navbar{
+  background: var(--bs-red);
+}
